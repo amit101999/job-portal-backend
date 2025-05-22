@@ -1,0 +1,12 @@
+name: "deploying backend to aws"
+on:
+  push:
+    branches:
+      - master
+     
+jobs: 
+    name: "deploy to aws"
+        runs-on: ubuntu-latest
+        steps:
+            - name : "checkout code"
+              uses: actions/checkout@v2

@@ -21,6 +21,10 @@ const options = {
 }
 
 
+app.get("/amit", (req, res) => {
+    res.send("hello amit")
+})
+
 app.use(cors(options))
 
 const port = process.env.PORT || 3800;

@@ -5,8 +5,16 @@ on:
       - master
      
 jobs: 
-    name: "deploy to aws"
+    deploy-bakend:
         runs-on: ubuntu-latest
         steps:
             - name : "checkout code"
               uses: actions/checkout@v2
+            
+            - name : "installing packages"
+              run:  npm i 
+            
+            # - name: "run server"
+            #   run: pm2 restart server 
+              
+              

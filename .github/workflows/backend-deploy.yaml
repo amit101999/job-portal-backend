@@ -9,11 +9,6 @@ jobs:
     deploy-bakend:
         runs-on: self-hosted
         steps:
-            - name: "install node"
-              uses: actions/setup-node@v2
-              with:
-                node-version: '18'
-
             - name : "checkout code"
               uses: actions/checkout@v2
             

@@ -25,6 +25,8 @@ app.get("/amit", (req, res) => {
     res.send("hello amit")
 })
 
+console.log("connecting to server")
+
 app.use(cors(options))
 
 const port = process.env.PORT || 3800;

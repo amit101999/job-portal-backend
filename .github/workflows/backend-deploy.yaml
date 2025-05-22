@@ -20,7 +20,7 @@ jobs:
             - name : "installing packages"
               run:  npm i 
             
-            # - name: "run server"
-            #   run: pm2 restart server 
+            - name: "run server"
+              run: pm2 restart server 
               
               

@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 const options = {
-    origin: "https://job-portal-frontend-ashen-seven.vercel.app",
+    origin: "*",
     credentials: true
 }
 

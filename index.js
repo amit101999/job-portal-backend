@@ -41,14 +41,14 @@ app.use('/api/v1/application', applicantRoute)
 
 
 
+app.listen(port, async () => {
+    try {
         await connectDb()
-// app.listen(port, async () => {
-//     try {
-//     } catch (err) {
-//         comsole.log("error in connection database", err)
-//     }
-//     console.log(`Server running on port ${port}`);
-// });
+    } catch (err) {
+        comsole.log("error in connection database", err)
+    }
+    console.log(`Server running on port ${port}`);
+});
 
 
 

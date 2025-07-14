@@ -15,8 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 const options = {
-    origin: "http://localhost:5173",
-    // origin: "https://job-portal-my.netlify.app",
+    origin: "https://job-portal-frontend-ashen-seven.vercel.app",
     credentials: true
 }
 
@@ -42,14 +41,14 @@ app.use('/api/v1/application', applicantRoute)
 
 
 
-app.listen(port, async () => {
-    try {
-        await connectDb()
-    } catch (err) {
-        comsole.log("error in connection database", err)
-    }
-    console.log(`Server running on port ${port}`);
-});
+// app.listen(port, async () => {
+//     try {
+//         await connectDb()
+//     } catch (err) {
+//         comsole.log("error in connection database", err)
+//     }
+//     console.log(`Server running on port ${port}`);
+// });
 
 
 

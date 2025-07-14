@@ -41,9 +41,9 @@ app.use('/api/v1/application', applicantRoute)
 
 
 
+        await connectDb()
 // app.listen(port, async () => {
 //     try {
-//         await connectDb()
 //     } catch (err) {
 //         comsole.log("error in connection database", err)
 //     }

@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 const options = {
-    origin: "https://job-portal-frontend-kp8g8fhhd-amits-projects-6033cb4a.vercel.app",
+    origin: "https://job-portal-frontend-kp8g8fhhd-amits-projects-6033cb4a.vercel.app/",
     credentials: true
 }
 

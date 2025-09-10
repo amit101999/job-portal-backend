@@ -1,0 +1,21 @@
+name: "deploying backend to aws"
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+     
+jobs: 
+    deploy-bakend:
+        runs-on: self-hosted
+        steps:
+            - name : "checkout code"
+              uses: actions/checkout@v2
+            
+            - name : "installing packages"
+              run:  npm i 
+            
+            - name: "run server"
+              run: pm2 restart server 
+              
+              

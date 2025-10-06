@@ -16,8 +16,10 @@ app.use(cookieParser());
 const payementRoute = require("./Routes/paymentRoute");
 
 const options = {
-  // origin:// "https://job-portal-frontend-19ezy0y92-amits-projects-6033cb4a.vercel.app",
-  origin: "http://localhost:5173",
+  origin: [
+    "https://job-portal-frontend-19ezy0y92-amits-projects-6033cb4a.vercel.app",
+    "http://localhost:5173",
+  ],
   credentials: true,
 };
 

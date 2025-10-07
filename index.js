@@ -6,9 +6,8 @@ const userRoute = require("./Routes/userRoutes");
 const companyRoute = require("./Routes/companyRoutes");
 const jobRoute = require("./Routes/jobsRoutes");
 const applicantRoute = require("./Routes/applicationRoute");
-const path = require("path");
-// const dotenv = require('dotenv').config({ path: path.join(__dirname, '.env') })
 const dotenv = require("dotenv").config();
+// const dotenv = require('dotenv').config({ path: path.join(__dirname, '.env') })
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

@@ -36,17 +36,31 @@ app.get("/", (req, res) => {
   res.send("server is running");
 });
 
+// Vercel runs Express as serverless: app.listen callbacks are unreliable for DB setup.
+// Ensure MongoDB is connected before any route touches Mongoose.
+app.use(async (req, res, next) => {
+  try {
+    await connectDb();
+    next();
+  } catch (err) {
+    console.error("Database connection failed:", err);
+    res.status(503).json({
+      message: "Database unavailable",
+      success: false,
+    });
+  }
+});
+
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/company", companyRoute);
 app.use("/api/v1/job", jobRoute);
 app.use("/api/v1/application", applicantRoute);
 app.use("/api/v1/payment", payementRoute);
 
-app.listen(port, async () => {
-  try {
-    await connectDb();
-  } catch (err) {
-    console.log("error in connection database", err);
-  }
-  console.log(`Server running on port ${port}`);
-});
+if (process.env.VERCEL) {
+  module.exports = app;
+} else {
+  app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+  });
+}
